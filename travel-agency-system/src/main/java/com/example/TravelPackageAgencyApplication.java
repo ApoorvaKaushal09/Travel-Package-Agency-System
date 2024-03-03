@@ -27,7 +27,8 @@ public class TravelPackageAgencyApplication {
      * @throws SignUpForActivityException         If there is an issue with signing up for an activity.
      */
     private static void runTravelPackageApplication() throws ActivityException, TravelPackageAddPassengerException, SignUpForActivityException {
-        TravelPackage travelPackage = new TravelPackage("Travel Package", 8);
+
+        TravelPackage travelPackage = new TravelPackage("International Tour Package", 8);
 
         Destination rajasthanDestination = new Destination("Rajasthan", new ArrayList<Activity>());
         Destination dubaiDestination = new Destination("Dubai", new ArrayList<Activity>());
@@ -76,17 +77,22 @@ public class TravelPackageAgencyApplication {
         passenger6.signUpForActivity(photographyActivity);
         passenger7.signUpForActivity(sightSeeingActivity);
 
+        System.out.println("Task 1 : Print itinerary of the travel package : ");
         travelPackage.printItinerary();
         System.out.println("           ------------------------           ");
+
+        System.out.println("Task 2 : Print the passenger list of the travel package : ");
         travelPackage.printPassengerList();
         System.out.println("           ------------------------           ");
-        travelPackage.printAllAvailableActivities();
-        System.out.println("           ------------------------           ");
 
+        System.out.println("Task 3 : Print the details of an individual passenger : ");
         for(Passenger passenger : travelPackage.getPassengers()){
             passenger.printDetails();
             System.out.println("           ------------------------           ");
         }
+
+        System.out.println("Task 4 : Print the details of all the activities that still have spaces available, including how many spaces are available : ");
+        travelPackage.printAllAvailableActivities();
         System.out.println("           ------------------------           ");
 
     }

@@ -97,8 +97,8 @@ public class Passenger {
         System.out.println("Balance: $" + balance);
         System.out.println("Activities:");
         for (Activity activity : activities) {
-            System.out.println("- " + activity.getName() + " at " + activity.getDestination().getName() +
-                    " (Cost: $" + calculateCost(activity) + ")");
+            System.out.println("- " + activity.getName() + " at Destination : " + activity.getDestination().getName() +
+                    " (Price Paid: $" + calculateCost(activity) + ")");
         }
     }
 }
